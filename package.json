@@ -16,11 +16,13 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
+    "eslint-import-resolver-babel-module": "^4.0.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.9.1",
     "jest": "^23.1.0",
@@ -35,6 +37,28 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "cwd": "babelrc",
+          "alias": {
+            "~src": "./src"
+          },
+          "extensions": [
+            ".js",
+            ".ios.js",
+            ".android.js"
+          ]
+        }
+      ]
+    ]
   },
   "eslintConfig": {
     "root": true,
@@ -52,7 +76,21 @@
     "env": {
       "browser": true,
       "jest": true
-    }
+    },
+    "settings": {
+		  "import/resolver": {
+		    "babel-module": {
+		    	"alias": {
+            "~src": "./src"
+          },
+          "extensions": [
+            ".js",
+            ".ios.js",
+            ".android.js"
+          ]
+		    }
+		  }
+		}
   },
   "prettier": {
     "singleQuote": true,
