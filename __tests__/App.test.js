@@ -1,3 +1,8 @@
-test('adds 1 + 2 to equal 3', () => {
-  expect(1 + 2).toBe(3);
+import renderer from 'react-test-renderer';
+import React from 'react';
+import App from '~src/App';
+
+test('Test app rendering', ()=> {
+	const wrapper = renderer.create(<App />).toJSON();
+	expect(wrapper).toMatchSnapshot();
 });

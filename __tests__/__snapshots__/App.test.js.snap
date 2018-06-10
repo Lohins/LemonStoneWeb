@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test app rendering 1`] = `
+<div
+  className="App"
+>
+  <h1>
+     Hello, World Sitong! 
+  </h1>
+</div>
+`;

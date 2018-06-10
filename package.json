@@ -20,13 +20,18 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.9.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.1.0",
     "prettier": "1.13.5",
+    "react-test-renderer": "^16.4.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.3",
@@ -78,9 +83,9 @@
       "jest": true
     },
     "settings": {
-		  "import/resolver": {
-		    "babel-module": {
-		    	"alias": {
+      "import/resolver": {
+        "babel-module": {
+          "alias": {
             "~src": "./src"
           },
           "extensions": [
@@ -88,13 +93,29 @@
             ".ios.js",
             ".android.js"
           ]
-		    }
-		  }
-		}
+        }
+      }
+    }
   },
   "prettier": {
     "singleQuote": true,
     "printWidth": 100,
     "trailingComma": "es5"
+  },
+  "jest": {
+    "testMatch": [
+      "**/?(*.)test.js?(x)"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+	    "^.+\\.(css|scss)$": "identity-obj-proxy"
+	  },
+    "collectCoverage": true,
+    "coverageReporters": [
+      "text-summary",
+      "html"
+    ]
   }
 }
