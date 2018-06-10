@@ -4,11 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "TZ=UTC jest",
     "start": "webpack-dev-server --mode development",
     "lint": "eslint --ignore-path .gitignore --ignore-pattern '**/WixCalendarModule/**' '**/*.js'",
     "format": "prettier --ignore-path .gitignore --write '**/*.js'"
-  
   },
   "author": "",
   "license": "ISC",
@@ -24,6 +23,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.9.1",
+    "jest": "^23.1.0",
     "prettier": "1.13.5",
     "style-loader": "^0.21.0",
     "webpack": "^4.12.0",
@@ -55,8 +55,8 @@
     }
   },
   "prettier": {
-  	"singleQuote": true,
-  	"printWidth": 100,
-  	"trailingComma": "es5"
+    "singleQuote": true,
+    "printWidth": 100,
+    "trailingComma": "es5"
   }
 }
